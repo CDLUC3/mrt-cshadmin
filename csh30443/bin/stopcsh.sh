@@ -1,14 +1,17 @@
-#!/bin/sh
-pth="$(dirname -- "$0")"
-echo path $pth
-cd $pth
+#!/bin/bash
+# @(#) Kill Cloudhost using saved pid
 
-value=`cat ../cloudhost/cshpid.txt`
-if [ ! -z "$value" -a "$value" != " " ]; then
+pth="$(/usr/bin/dirname -- "$0")"
+#echo path $pth
+# If the $pth directory doesn't exist, exit with error.
+cd "$pth" || exit 1
+
+value="$(/bin/cat ../cloudhost/cshpid.txt 2>/dev/null)"
+if [ ! -z "$value" ] && [ "$value" != " " ]; then
         echo "Found pid:$value"
-	kill -9 $value
-	rm ../cloudhost/cshpid.txt
+	/bin/kill -9 "$value"
+	/bin/rm ../cloudhost/cshpid.txt
 	echo csh stopped
 else
-	echo cshpid.txt not found
+	echo Cloudhost appears to be stopped: cshpid.txt not found
 fi
