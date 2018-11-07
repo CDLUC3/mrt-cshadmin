@@ -7,6 +7,7 @@ mkdir $DEST
 cp ./cshrun.sh $DEST/.
 cp ./cshrunlog.sh $DEST/.
 cp ./testrun.sh $DEST/.
+cp ./testrun-empty.sh $DEST/.
 cp ./state.sh $DEST/.
 cp ./sslstate.sh $DEST/.
 cp ./README.txt $DEST/.

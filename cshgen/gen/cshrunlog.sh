@@ -33,4 +33,4 @@ mkdir ../logs
 DATE=`date '+%Y-%m-%d'`
 logname="cloudhost-$DATE.log"
 
-java -jar mrt-cloudhost-1.0.jar $PW $SSL $PORT $NODE > ../logs/$logname 2>&1
+java -jar mrt-cloudhost-1.0.jar $PW $SSL $PORT $NODE >> ../logs/$logname 2>&1
