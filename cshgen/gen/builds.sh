@@ -10,7 +10,8 @@ cp ./testrun.sh $DEST/.
 cp ./state.sh $DEST/.
 cp ./sslstate.sh $DEST/.
 cp ./README.txt $DEST/.
-curl -s "http://builds.cdlib.org/view/Merritt/job/mrt-jetty-cloudhost/ws/cloudhost-jetty/master/mrt-cloudhost-1.0.jar"  > $DEST/mrt-cloudhost-1.0.jar
+#curl -s "http://builds.cdlib.org/view/Merritt/job/mrt-jetty-cloudhost/ws/cloudhost-jetty/master/mrt-cloudhost-1.0.jar"  > $DEST/mrt-cloudhost-1.0.jar
+curl -s "http://builds.cdlib.org/view/Merritt/job/mrt-cloudhost-pub/ws/cloudhost-jetty/master/mrt-cloudhost-1.0.jar" > $DEST/mrt-cloudhost-1.0.jar
 cd ..
 zip cloudhost.zip cloudhost/*
 rm -r cloudhost

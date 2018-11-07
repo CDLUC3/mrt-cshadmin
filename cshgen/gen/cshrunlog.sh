@@ -8,6 +8,7 @@
 PW=cdluc3
 SSL=$1
 PORT=$2
+NODE=$3
 
 if [ ! -z "$PORT" ] 
 then
@@ -20,10 +21,16 @@ then
    export CLOUDHOST_SSL=$SSL
 fi
 echo set ssl $CLOUDHOST_SSL
+if [ -z "$NODE" ]
+then
+   NODE=8100
+fi
+
+echo Default node: $NODE
 
 #Set logname
 mkdir ../logs
 DATE=`date '+%Y-%m-%d'`
 logname="cloudhost-$DATE.log"
 
-java -jar mrt-cloudhost-1.0.jar $PW $SSL $PORT > ../logs/$logname 2>&1
+java -jar mrt-cloudhost-1.0.jar $PW $SSL $PORT $NODE > ../logs/$logname 2>&1
